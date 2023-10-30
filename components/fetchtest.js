@@ -1,4 +1,5 @@
 'use client'
+import { data } from 'autoprefixer';
 import useSWR  from 'swr';
 
 
@@ -7,7 +8,15 @@ const api1 = "/brandsofaowner"
 const parameter = "?ownerID=1"
 
 
-const fetcher = (url) => fetch(url).then((res) => res.json());
+const fetcher2 = (url) => fetch(url).then((res) => res.json());
+
+const fetcher = async function JataFetch(param)
+{
+    const response = await fetch(param);
+    const data = await response.json();
+    return data;
+    
+}
 
 function AmrFetch() {
 
